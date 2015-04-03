@@ -1,4 +1,4 @@
-﻿Udacity - Project 4 - Optimizing website performance
+Udacity - Project 4 - Optimizing website performance
 ### Getting started
 
 Setting up the workspace on local:
