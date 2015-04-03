@@ -1,47 +1,4 @@
-﻿## Website Performance Optimization portfolio project
-
-Our objective was to take Cameron’s portfolio and optimize it to score above a 90/100 on mobile devices and desktop browsers via Google’s PageSpeed Insights [https://developers.google.com/speed/pagespeed/insights/]
-
-Here is my submission for this project.
- 
-#### Score:
-97/100 on desktop browsers
-95/100 on mobile. 
-
-
-#### Optimization: I tried to optimise the index.html and pizza.html by :
-
-In-lined all CSS and minified BOTH index.html and pizza.html.
-
-Added media print
-
-Added async to all JavaScript links on index.html and pizza.html. 
-
-Compressed all images on index.html and on pizza.html. 
-
-Minified the css, js and html files 
-
-Refactored updatePositions function, then added requestAnimation to it
-
-Improved fps of scroll performance by removing .mover query from function.
-
-Used translateX trick found in piazza posts.
-
-#### References: 
-https://developer.chrome.com/devtools/docs/timeline
-http://www.webpagetest.org
-http://googlewebfonts.blogspot.co.uk/2010/09/optimizing-use-of-google-font-api.html
-https://developers.google.com/fonts/docs/webfont_loader
-https://github.com/typekit/webfontloader 
-https://www.youtube.com/watch?v=vBHt61yDO9U 
-http://gtmetrix.com/ 
-http://stackoverflow.com/questions/12316501/including-google-web-fonts-link-or-import/12380004#12380004 
-https://www.youtube.com/watch?v=sqesm0euf9M (webfonts with Ilya Gregorik)
-https://www.youtube.com/watch?v=YV1nKLWoARQ (Ilya Gregorik)
-https://tinypng.com (image optimization)
-http://www.picresize.com/results
-http://www.w3schools.com/jsref/prop_win_innerheight.asp (about window size)
-
+## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
@@ -69,7 +26,7 @@ Some useful tips to help you get started:
   $> ngrok 8080
   ```
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
 
 Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 

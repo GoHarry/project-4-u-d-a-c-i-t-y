@@ -5,7 +5,6 @@ jank-free at 60 frames per second.
 There are two major issues in this code that lead to sub-60fps performance. Can
 you spot and fix both?
 
-
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
@@ -15,7 +14,6 @@ Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
 */
-
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
 var pizzaIngredients = {};
@@ -354,7 +352,6 @@ var makeRandomPizza = function() {
 
   pizza = pizza + ingredientItemizer(selectRandomSauce());
   pizza = pizza + ingredientItemizer(selectRandomCrust());
-
   return pizza;
 };
 
@@ -450,14 +447,11 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    //Removed most of this, and refactored:      
-    var randomPizzaContainer = document.querySelectorAll(".randomPizzaContainer");
-      var randomPizzaContainerLength = randomPizzaContainer.length;
-      var dx = determineDx(randomPizzaContainer[0], size);
-      var newwidth = (randomPizzaContainer[0].offSetWidth + dx) + 'px';
-      for (var i = 0; i < randomPizzaContainer.length; i++){
-
-        randomPizzaContainer[i].style.width = newwidth;
+    // P4 - BLG - cached max value for loop (change 01)
+    for (var i = 0, len=document.querySelectorAll(".randomPizzaContainer").length; i < len; i++) {
+      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
+      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
+      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
     }
   }
 
