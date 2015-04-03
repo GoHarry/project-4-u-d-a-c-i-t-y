@@ -447,7 +447,7 @@ var resizePizzas = function(size) {
       var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
  // README: simplified loop by taking variable out of loop and by calculating pizzaContainers.length once and not several times in a loop.(change 02)
       var pizzaContainersLength = pizzaContainers.length;
-      for (var i = 0; i < pizzaContainerslength; i++) {
+      for (var i = 0; i < pizzaContainersLength; i++) {
   //    var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
   //    var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
       pizzaContainers[i].style.width = newwidth;
@@ -534,12 +534,10 @@ function updatePositions() {
    var normalizedScrollTop = bodyScrollTop / 1250;
  // README: simplified loop by taking variable out of loop and by calculating items.length once and not several times in a loop.(change 02)
    var itemsLength = items.length;
-   // README: simplified loop by taking variable out of loop (change 02)
-   var phase = Math.sin((document.body.scrollTop / 1250) + (itemsLength % 5));
    for (var i = 0; i < itemsLength; i++) {
       // README: only applying to "visible" pizzas (change 07)
       if (parseInt(items[i].style.top, 10) <= h) {
-      //   var phase = Math.sin((normalizedScrollTop) + (i % 5));
+         var phase = Math.sin((normalizedScrollTop) + (i % 5));
          items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
       }
    }
