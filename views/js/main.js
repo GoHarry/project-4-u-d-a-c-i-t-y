@@ -440,14 +440,15 @@ var resizePizzas = function(size) {
   }
 
   // Iterates through pizza elements on the page and changes their widths
-  function changePizzaSizes(size) {
+function changePizzaSizes(size) {
     // README - simplified loop by taking variable out of it (change 02)
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[0], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[0].offsetWidth + dx) + 'px';
-    for (var i = 0, len=document.querySelectorAll(".randomPizzaContainer").length; i < len; i++) {
+      var pizzaContainers = document.querySelectorAll(".randomPizzaContainer");
+      var dx = determineDx(pizzaContainers[0], size);
+      var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
+      for (var i = 0; i < pizzaContainers.length; i++) {
   //    var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
   //    var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      pizzaContainers[i].style.width = newwidth;
     }
   }
 
@@ -528,11 +529,14 @@ function updatePositions() {
    // README: cached document.body.scrollTop and calculation (change 05)
    var bodyScrollTop = document.body.scrollTop;
    var normalizedScrollTop = bodyScrollTop / 1250;
-   // README: cached the items.length (change 01)
-   for (var i = 0, len = items.length; i < len; i++) {
+ // README: simplified loop by taking variable out of loop and by calculating items.length once and not several times in a loop.(change 02)
+   var itemsLength = items.length;
+   // README: simplified loop by taking variable out of loop (change 02)
+   var phase = Math.sin((document.body.scrollTop / 1250) + (itemsLength % 5));
+   for (var i = 0; i < itemsLength; i++) {
       // README: only applying to "visible" pizzas (change 07)
       if (parseInt(items[i].style.top, 10) <= h) {
-         var phase = Math.sin((normalizedScrollTop) + (i % 5));
+      //   var phase = Math.sin((normalizedScrollTop) + (i % 5));
          items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
       }
    }
